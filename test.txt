@@ -1,1 +1,4 @@
 wersja z test + test_2
+1
+2
+3
