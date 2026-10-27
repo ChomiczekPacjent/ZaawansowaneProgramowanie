@@ -1,0 +1,23 @@
+name: PEP8
+
+on:
+  push:
+  pull_request:
+
+jobs:
+  pycodestyle:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Pobranie kodu
+        uses: actions/checkout@v4
+
+      - name: Instalacja Pythona
+        uses: actions/setup-python@v5
+        with:
+          python-version: '3.12'
+
+      - name: Instalacja pycodestyle
+        run: pip install pycodestyle
+
+      - name: Sprawdzenie PEP8
+        run: pycodestyle --count --statistics .
